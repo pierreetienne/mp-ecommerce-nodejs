@@ -1,4 +1,3 @@
-
 <div class="as-search-wrapper" role="main">
     <div class="as-navtuck-wrapper">
         <div class="as-l-fullwidth  as-navtuck" data-events="event52">
@@ -54,37 +53,37 @@
                                     <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
                                         <div class="as-tilegallery-element as-image-selected">
                                             <div class=""></div>
-                                            <img src="./assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url({{ img }}) 2x);">
+                                            {{#each items}}
+                                            <img src="./assets/003.jpg" class="ir ir item-image as-producttile-image" alt="" width="445" height="445" style="content:-webkit-image-set(url({{ picture_url }}) 2x);">
+                                            {{/each}}
                                         </div>
                                         
                                     </div>
 
                                     
                                 </div>
-
-                                
-
                             </div>
-
                         </div>
                         <div class="as-producttile-info" style="float:left;min-height: 168px;">
+                        {{#each items}}
                             <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
                                 <div class="as-producttile-title">
                                     <h3 class="as-producttile-name">
                                         <p class="as-producttile-tilelink">
-                                            <span data-ase-truncate="2"> {{ title }} </span>
+                                            <span data-ase-truncate="2">  {{ this.title }} </span>
                                         </p>
 
                                     </h3>
                                 </div>
                                 <h3 >
-                                    {{ price }}
+                                     {{ this.unit_price }}
                                 </h3>
                                 <h3 >
-                                    {{ unit }}
+                                     {{ this.quantity }}
                                 </h3>
                             </div>
-                            <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                        {{/each}}
+                            <a href="{{init_point}}" class="mercadopago-button" target="_blank">Pagar la compra</a>
                         </div>
                     </div>
                 </div>
@@ -92,4 +91,3 @@
         </div>
     </div>
 </div>
-   
